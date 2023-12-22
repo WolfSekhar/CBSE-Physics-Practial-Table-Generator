@@ -1,5 +1,6 @@
 import random
-
+from rich.table import Table
+from rich.console import Console
 
 class ResistanceOfWire:
 
@@ -10,18 +11,20 @@ class ResistanceOfWire:
         self.parallel_combination_value = 0  # from r1 and r2
         self.parallel_value = 0  # experiment table while in parallel connection
         self.wire = 1
+        self.console = Console()
+        self.table = Table(title = 'Resistance of Wire')
+
+
+        self.table.add_column('SL no')
+        self.table.add_column('Resistance')
+        self.table.add_column('l in cm')
+        self.table.add_column('100 - l')
+        self.table.add_column('unknown resistance')
 
     def run(self):
         print("Find unknown resistance using a meter bridge)")
         print("---------------------------------------------------")
 
-        def title():
-            print("No.of Observation", end=" |")
-            print("R (in ohm)", end=" |")
-            print("l (in cm.)", end=" |")
-            print("(100 -l) (in cm)", end=" |")
-            print("X = R (l/(100 -l)) in ohms", end=" |")
-            print("Mean X (in ohms)")
 
         # Table 1 and 2
 
@@ -84,9 +87,9 @@ class ResistanceOfWire:
 
             # title()
             for value in values:
-                print(value)  # printing all the values one by one
+                self.table.add_row(str(value[0]),str(value[1]),str(value[2]),str(value[3]),str(value[4]))
+            self.console.print(self.table)
             mean_x()  # printing mean value of each wire
-
 
 resistance = ResistanceOfWire()
 resistance.run()
