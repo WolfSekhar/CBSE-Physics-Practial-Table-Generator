@@ -5,7 +5,7 @@ It generates tabular values for CBSE XII Physics Practical
 
 ## How to run
 1. Python
-2. pip install matplotlib rice
+2. pip install matplotlib rich
 3. git clone https://github.com/WolfSekhar/CBSE-Physics-Practial-Table-Generator.git
 4. run the following command for required experiment <br>
     Example : <br>
