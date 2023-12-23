@@ -2,6 +2,7 @@ from rich.console import Console
 import series_meter_bridge as Series
 import parallel_meter_bridge as Parallel
 import resistance_of_wire as ResistanceOfWire
+import resistivity_vi as ResistivityOfWire
 
 class Main():
 	def __init__(self):
@@ -39,6 +40,9 @@ class Main():
 			Parallel.Parallel().run()
 		elif experiment_number == 2:
 			ResistanceOfWire.ResistanceOfWire().run()
+		elif experiment_number == 1:
+			ResistivityOfWire.ResistivityOfWire().run()
+
 
 	def test(self):
 		for i in range(2):
