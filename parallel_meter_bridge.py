@@ -176,5 +176,5 @@ class Parallel:
         print("Parallel comb value : ", round(parallel_combination_value, 2))
 
 
-parallel = Parallel()
-parallel.run()
+#parallel = Parallel()
+#parallel.run()

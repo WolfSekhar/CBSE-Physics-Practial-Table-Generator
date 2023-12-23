@@ -9,11 +9,9 @@ It generates tabular values for CBSE XII Physics Practical
 3. git clone https://github.com/WolfSekhar/CBSE-Physics-Practial-Table-Generator.git
 4. run the following command for required experiment <br>
     Example : <br>
-    py resistivity_vi.py <br>
+    py main.py <br>
     <i>Keep in mind that the values change every time you run the script</i>
-5. If you want to save the result <br>
-    py resistivity_vi.py > filename.txt <br>
-    <i>This will save the table in a text file. </i> 
+
 
 
 

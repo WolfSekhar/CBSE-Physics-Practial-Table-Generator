@@ -182,5 +182,5 @@ class Series:
         print("series comb value : ", round(series_combination_value, 2))
 
 
-series = Series()
-series.run()
+#series = Series()
+#series.run()

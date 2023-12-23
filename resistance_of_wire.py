@@ -91,5 +91,5 @@ class ResistanceOfWire:
             self.console.print(self.table)
             mean_x()  # printing mean value of each wire
 
-resistance = ResistanceOfWire()
-resistance.run()
+#resistance = ResistanceOfWire()
+#resistance.run()
