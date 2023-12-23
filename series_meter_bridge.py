@@ -1,4 +1,6 @@
 import random
+from rich.table import Table
+from rich.console import Console
 
 
 class Series:
@@ -10,6 +12,21 @@ class Series:
         self.series_combination_value = 0  # from r1 and r2
         self.series_value = 0  # experiment table while in series connection
         self.wire = 1
+        self.console = Console()
+        self.table = Table(title = "[bright_white on deep_sky_blue3]first wire")
+        self.table2 = Table(title = '[bright_white on deep_sky_blue3]second wire')
+        self.table3 = Table(title = '[bright_white on deep_sky_blue3]third wire')
+        self.tables = [self.table,self.table2,self.table3]
+
+        for t in self.tables:
+            t.add_column('no of observations',style='red')
+            t.add_column('R',style='green')
+            t.add_column('l',style='yellow')
+            t.add_column('100 - l',style = 'turquoise2')
+            t.add_column('X',style='light_slate_blue')
+
+
+
 
     def run(self):
         print("To verify the law of combination (series) \n of resistance using a meter bridge)")
@@ -86,8 +103,10 @@ class Series:
             x()
 
             # title()
-            for value in values:
-                print(value)  # printing all the values one by one
+            for v in values:
+                #print(value)  # printing all the values one by one
+                self.tables[count].add_row(str(v[0]),str(v[1]),str(v[2]),str(v[3]),str(v[4]))
+            self.console.print(self.tables[count])
             mean_x()  # printing mean value of each wire
 
         # table 3
@@ -109,7 +128,7 @@ class Series:
 
         series_combination_value = calculate_combination_series_from_r1_r2()
 
-        print("----------------------------------")
+        
 
         series_value = round(series_combination_value + 0.01, 2)
 
@@ -153,8 +172,9 @@ class Series:
 
         print("****************3****************** ")
 
-        for i in rev_values:
-            print(i)
+        for v in rev_values:
+            self.table3.add_row(str(v[0]),str(v[1]),str(v[2]),str(v[3]),str(v[4]))
+        self.console.print(self.table3)
         print("************* combined wires value ************")
         print("Mean X: ", series_value)
 
