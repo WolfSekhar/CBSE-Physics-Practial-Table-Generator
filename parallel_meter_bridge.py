@@ -1,5 +1,6 @@
 import random
-
+from rich.table import Table
+from rich.console import Console
 
 class Parallel:
 
@@ -10,6 +11,18 @@ class Parallel:
         self.parallel_combination_value = 0  # from r1 and r2
         self.parallel_value = 0  # experiment table while in parallel connection
         self.wire = 1
+        self.console = Console()
+        self.table = Table(title = "[bright_white on deep_sky_blue3]first wire")
+        self.table2 = Table(title = '[bright_white on deep_sky_blue3]second wire')
+        self.table3 = Table(title = '[bright_white on deep_sky_blue3]third wire')
+        self.tables = [self.table,self.table2,self.table3]
+
+        for t in self.tables:
+            t.add_column('no of observations',style='red')
+            t.add_column('R',style='green')
+            t.add_column('l',style='yellow')
+            t.add_column('100 - l',style = 'turquoise2')
+            t.add_column('X',style='light_slate_blue')
 
     def run(self):
         print("To verify the law of combination (parallel) \n of resistance using a meter bridge)")
@@ -85,9 +98,10 @@ class Parallel:
             hundred_minus_l()
             x()
 
-            # title()
-            for value in values:
-                print(value)  # printing all the values one by one
+            # title
+            for v in values:
+                self.tables[count].add_row(str(v[0]),str(v[1]),str(v[2]),str(v[3]),str(v[4]))
+            self.console.print(self.tables[count])
             mean_x()  # printing mean value of each wire
 
         # table 3
@@ -109,7 +123,6 @@ class Parallel:
 
         parallel_combination_value = calculate_combination_parallel_from_r1_r2()
 
-        print("----------------------------------")
 
         parallel_value = round(parallel_combination_value + 0.01, 2)
 
@@ -153,8 +166,9 @@ class Parallel:
 
         print("****************3****************** ")
 
-        for i in rev_values:
-            print(i)
+        for v in rev_values:
+            self.table3.add_row(str(v[0]),str(v[1]),str(v[2]),str(v[3]),str(v[4]))
+        self.console.print(self.table3)
         print("************* combined wires value ************")
         print("Mean X: ", parallel_value)
 
