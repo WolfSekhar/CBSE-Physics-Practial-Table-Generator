@@ -54,7 +54,7 @@ class Parallel:
         def l():
             counter = 0
             for i in range(2):
-                upper_value = random.randint(45, 60)
+                upper_value = random.randint(45, 55)
                 upper_reducer = random.randint(10, 15)
                 for j in range(3):
                     values[counter].append(upper_value)
