@@ -41,7 +41,7 @@ class Main():
 		elif experiment_number == 2:
 			ResistanceOfWire.ResistanceOfWire().run()
 		elif experiment_number == 1:
-			ResistivityOfWire.ResistivityOfWire().run()
+			ResistivityOfWire.ResistivityOfWires().run()
 
 
 	def test(self):
