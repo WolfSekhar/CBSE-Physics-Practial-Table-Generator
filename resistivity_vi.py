@@ -1,7 +1,7 @@
 from rich.console import Console
 from rich.table import Table
 import random as random
-import matplotlib.pyplot as plt
+
 
 class ResistivityOfWires:
 	def __init__(self):
