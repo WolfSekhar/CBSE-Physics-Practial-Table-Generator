@@ -3,6 +3,7 @@ import series_meter_bridge as Series
 import parallel_meter_bridge as Parallel
 import resistance_of_wire as ResistanceOfWire
 import resistivity_vi as ResistivityOfWire
+import galvanometer_half_deflection as GHalfDeflection
 
 class Main():
 	def __init__(self):
@@ -20,6 +21,8 @@ class Main():
 			'./series_meter_bridge.py')
 		self.experiments[4] = ("To verify the laws of combination (parallel) of resistances using a metre bridge.",
 			'./paralle_meter_bridge.py')
+		self.experiments[5] = ('To determine resistance of a galvanometer by half-deflection method and to find its'+
+			'figure of merit','./galvanometer_half_deflection.py')
 
 
 	def showOptions(self):
@@ -31,7 +34,7 @@ class Main():
 		input_experiment_number = int(input("Enter the experiment number : "))
 		self.number_of_experiment = input_experiment_number
 		print(input_experiment_number)
-		
+	
 
 	def showTabulation(self,experiment_number):
 		if experiment_number == 3:
@@ -42,6 +45,8 @@ class Main():
 			ResistanceOfWire.ResistanceOfWire().run()
 		elif experiment_number == 1:
 			ResistivityOfWire.ResistivityOfWires().run()
+		elif experiment_number == 5:
+			GHalfDeflection.GalvanometerHalfDeflection().run()
 
 
 	def test(self):
