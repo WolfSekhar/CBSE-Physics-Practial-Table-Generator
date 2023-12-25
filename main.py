@@ -29,12 +29,16 @@ class Main():
 		self.console.print("Choose Experiment : ", style="red")
 		for exp in self.experiments:
 			self.console.print(str(exp) + " : ",end= '')
-			self.console.print(self.experiments.get(exp)[0])
+			self.console.print("[#af8787]"+self.experiments.get(exp)[0])
 	def takeInput(self):
-		input_experiment_number = int(input("Enter the experiment number : "))
-		self.number_of_experiment = input_experiment_number
-		print(input_experiment_number)
-	
+		input_experiment_number = input("Enter the experiment number : ")
+		
+		try: 
+			self.number_of_experiment = int(input_experiment_number)
+			self.console.print(input_experiment_number)
+		except ValueError:
+			self.console.print("ERROR")
+		
 
 	def showTabulation(self,experiment_number):
 		if experiment_number == 3:
@@ -47,6 +51,9 @@ class Main():
 			ResistivityOfWire.ResistivityOfWires().run()
 		elif experiment_number == 5:
 			GHalfDeflection.GalvanometerHalfDeflection().run()
+
+		else:
+			exit()
 
 
 	def test(self):
