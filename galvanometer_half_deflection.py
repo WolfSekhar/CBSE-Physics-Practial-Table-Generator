@@ -8,8 +8,8 @@ class GalvanometerHalfDeflection:
 	def __init__(self):
 
 		self.console = Console()
-		self.table1 = Table(title = 'For resistance')
-		self.table2 = Table(title = 'For figure of merit')
+		self.table1 = Table(title = '[bright_white on yellow]For resistance')
+		self.table2 = Table(title = '[bright_white on green]For figure of merit')
 
 		self.table1.add_column('No of obs')
 		self.table1.add_column('R')
@@ -76,6 +76,7 @@ class GalvanometerHalfDeflection:
 		deflection = [26]
 		K = []
 		meanG = sum(self.G)/self.number_of_experiment
+		self.console.print( "[red] G mean value : " + '[green]'+ str(round(meanG,3)) + " Ohm")
 
 		def generateResistances():
 			RInitial = random.randrange(16,20) * 100;
@@ -130,6 +131,8 @@ class GalvanometerHalfDeflection:
 					str(round(deflection[i])),
 					str(k))
 			self.console.print(self.table2)
+			meanK  = format(sum(K)/self.number_of_experiment,'.8f')
+			self.console.print('Mean figure of merit : ', str(meanK) + " A/division")
 
 		generateResistances()
 		generateMerit()
