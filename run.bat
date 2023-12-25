@@ -1,0 +1,2 @@
+cls
+py galvanometer_half_deflection.py
