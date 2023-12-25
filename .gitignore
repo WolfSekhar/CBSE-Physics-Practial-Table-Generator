@@ -5,6 +5,7 @@ __pycache__/
 plot.py
 *.bat
 *.txt
+test.py
 
 # C extensions
 *.so
