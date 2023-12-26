@@ -13,9 +13,9 @@ class Series:
         self.series_value = 0  # experiment table while in series connection
         self.wire = 1
         self.console = Console()
-        self.table = Table(title = "[bright_white on deep_sky_blue3]first wire")
-        self.table2 = Table(title = '[bright_white on deep_sky_blue3]second wire')
-        self.table3 = Table(title = '[bright_white on deep_sky_blue3]third wire')
+        self.table = Table(title = "[bright_white on deep_sky_blue3]Unknown resistance of first wire")
+        self.table2 = Table(title = '[bright_white on deep_sky_blue3]Unknown resistance of second wire')
+        self.table3 = Table(title = '[bright_white on deep_sky_blue3]Unknown resistance of Series Combination')
         self.tables = [self.table,self.table2,self.table3]
 
         for t in self.tables:
@@ -29,8 +29,8 @@ class Series:
 
 
     def run(self):
-        print("To verify the law of combination (series) \n of resistance using a meter bridge)")
-        print("---------------------------------------------------")
+        self.console.print("[#00af87]To verify the law of combination (series) of resistance using a meter bridge)")
+        self.console.print("---------------------------------------------------")
 
         def title():
             print("No.of Observation", end=" |")
@@ -82,16 +82,18 @@ class Series:
         def mean_x():
             sum = 0
             mean = 0
-            print('-----------------------------------')
+            #print('-----------------------------------')
             for i in values:
                 sum = sum + i[4]
             mean = round(sum / len(values), 2)
-            print("mean : ", mean)
+            self.console.print("mean : ","[#87d700]" +  str(mean)  + ' Ohm')
             self.mean_resistance_of_wires.append(mean)
-            print('-----------------------------------')
+            print('')
 
         for count in range(2):
-            print("for wire : ", self.wire)
+            self.console.print("for wire : ","[#87d700]" + str(self.wire),style='u')
+            self.console.print("")
+
             self.wire += 1
 
             # calculation of values
@@ -104,7 +106,6 @@ class Series:
 
             # title()
             for v in values:
-                #print(value)  # printing all the values one by one
                 self.tables[count].add_row(str(v[0]),str(v[1]),str(v[2]),str(v[3]),str(v[4]))
             self.console.print(self.tables[count])
             mean_x()  # printing mean value of each wire
@@ -142,7 +143,7 @@ class Series:
 
         def reverseMean():
             meanX(series_combination_value)
-            # print("Reverse means : ", x_values_from_mean_x)
+            
 
         def reversel():
             X = x_values_from_mean_x
@@ -170,16 +171,16 @@ class Series:
         reverse_hundred_minus_l()
         insert_meanx_values()
 
-        print("****************3****************** ")
+        #print("****************3****************** ")
 
         for v in rev_values:
             self.table3.add_row(str(v[0]),str(v[1]),str(v[2]),str(v[3]),str(v[4]))
         self.console.print(self.table3)
         print("************* combined wires value ************")
-        print("Mean X: ", series_value)
+        self.console.print("Mean X: ","[#87d700]" + str(series_value) + " ohms")
 
         print("****************************************")
-        print("series comb value : ", round(series_combination_value, 2))
+        self.console.print("series comb value : ", "[#87d700]" + str(round(series_combination_value, 2)) + ' ohms')
 
 
 #series = Series()
