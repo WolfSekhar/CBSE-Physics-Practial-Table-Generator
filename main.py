@@ -5,6 +5,7 @@ import xii.resistance_of_wire as ResistanceOfWire
 import xii.resistivity_vi as ResistivityOfWire
 import xii.galvanometer_half_deflection as GHalfDeflection
 import xii.galvanometer_to_voltmeter as GTV
+import art as art
 
 class Main():
 	def __init__(self):
@@ -22,7 +23,7 @@ class Main():
 		self.experiments[5] = ('To determine resistance of a galvanometer by half-deflection method and to find its'+
 			'figure of merit')
 		self.experiments[6] = ("To convert the given galvanometer (of known resistance and figure of merit) into a " +
-			"voltmeter of desired range and to verify the same.")
+			"voltmeter of desired range and to verify.")
 
 
 	def showOptions(self):
@@ -62,8 +63,25 @@ class Main():
 			s = Series.Series()
 			s.run()
 
+	def closeProgramAlert(self):
+		self.console.print("\n\n [bold red] PRESS ENTER TO CLOSE THE PROGRAM : ")
+
+	def showAuthor(self):
+		self.console.print("[bold bright_magenta]PHYSICS PRACTICAL TABLE GENERATOR",justify = "center")
+		self.console.print(art.text2art("PHY - P - GEN",chr_ignore=False))
+		self.console.print("[b] By : [b blue]P.SEKHAR [white]([#87d700 b]PGT PHYSICS[white])",justify = "center")
+		self.console.print("[b]contact : [b #5f87d7] sekhar.root@gmail.com",justify = "center")
+		self.console.print("[b] url : [b #00ff00]https://github.com/WolfSekhar",justify = "center")
+
+
+
+
+
+
 main = Main()
+main.showAuthor()
 main.showOptions()
 main.takeInput()
 main.showTabulation(main.number_of_experiment)
-input("press enter to close terminal")
+main.closeProgramAlert()
+input(" ")
