@@ -67,13 +67,15 @@ class ResistivityOfWires:
 			experiment_number.append(i)
 
 		for i in currentValues:
-			step  = stepValue(0.1)
+			#step  = stepValue(0.1)
+			step = 0.4 # use step = stepValue(0.1) to get authentic error
 			resistance = (resistanceOne + step)
 			resistanceValues.append(round(resistance,2))
 			volatageValues.append(round(i * resistance,1))
 
 		for i in currentValues:
-			step  = stepValue(0.1)
+			#step  = stepValue(0.1)
+			step  = 0.4 # use step = stepValue(0.1) to get authentic error
 			resistance = (resistanceTwo + step)
 			resistanceValues.append(round(resistance,2))
 			volatageValues.append(round(i * resistance,1))

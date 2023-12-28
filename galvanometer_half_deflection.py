@@ -22,7 +22,7 @@ class GalvanometerHalfDeflection:
 		self.table2.add_column('Emf of battery E')
 		self.table2.add_column('R')
 		self.table2.add_column('Deflection in theta')
-		self.table2.add_column('Figue of merit K = E/((R + G)*theta)')
+		self.table2.add_column('Figue of merit K = E/((R - G)*theta)')
 
 		self.number_of_experiment = 5
 		self.R = []
