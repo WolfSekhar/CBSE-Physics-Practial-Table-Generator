@@ -1,9 +1,9 @@
 from rich.console import Console
-import series_meter_bridge as Series
-import parallel_meter_bridge as Parallel
-import resistance_of_wire as ResistanceOfWire
-import resistivity_vi as ResistivityOfWire
-import galvanometer_half_deflection as GHalfDeflection
+import xii.series_meter_bridge as Series
+import xii.parallel_meter_bridge as Parallel
+import xii.resistance_of_wire as ResistanceOfWire
+import xii.resistivity_vi as ResistivityOfWire
+import xii.galvanometer_half_deflection as GHalfDeflection
 
 class Main():
 	def __init__(self):
