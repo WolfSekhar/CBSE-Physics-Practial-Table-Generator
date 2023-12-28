@@ -4,6 +4,7 @@ import xii.parallel_meter_bridge as Parallel
 import xii.resistance_of_wire as ResistanceOfWire
 import xii.resistivity_vi as ResistivityOfWire
 import xii.galvanometer_half_deflection as GHalfDeflection
+import xii.galvanometer_to_voltmeter as GTV
 
 class Main():
 	def __init__(self):
@@ -20,13 +21,15 @@ class Main():
 		self.experiments[4] = ("To verify the laws of combination (parallel) of resistances using a metre bridge.")
 		self.experiments[5] = ('To determine resistance of a galvanometer by half-deflection method and to find its'+
 			'figure of merit')
+		self.experiments[6] = ("To convert the given galvanometer (of known resistance and figure of merit) into a " +
+			"voltmeter of desired range and to verify the same.")
 
 
 	def showOptions(self):
 		self.console.print("Choose Experiment : ", style="red")
 		for exp in self.experiments:
 			self.console.print(str(exp) + " : ",end= '')
-			self.console.print("[#af8787]"+self.experiments.get(exp)[0])
+			self.console.print("[#af8787]"+self.experiments.get(exp))
 	def takeInput(self):
 		input_experiment_number = input("Enter the experiment number : ")
 		
@@ -48,7 +51,8 @@ class Main():
 			ResistivityOfWire.ResistivityOfWires().run()
 		elif experiment_number == 5:
 			GHalfDeflection.GalvanometerHalfDeflection().run()
-
+		elif experiment_number == 6:
+			GTV.GalvanometerToVoltmeter().run()
 		else:
 			exit()
 
