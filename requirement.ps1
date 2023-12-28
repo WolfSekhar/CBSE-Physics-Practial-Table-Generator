@@ -1,6 +1,6 @@
-call py -m venv venv
-call python -m venv venv
-call .\venv\Scripts\Activate.ps1
-call pip install rich
-call pip install pyinstaller
-call deactivate
+py -m venv venv
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install rich
+pip install pyinstaller
+deactivate
