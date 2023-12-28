@@ -14,15 +14,12 @@ class Main():
 
 	def importAllExperimentsWithPath(self):
 		self.experiments[1] = ("To determine resistivity of two / three wires " +
-		 " by plotting a graph for potential difference versus current.",'./resistivity_vi.py')
-		self.experiments[2] = (("To find resistance of a given wire / standard resistor using metre bridge.",
-			'./resistance_of_wire.py'))
-		self.experiments[3] =("To verify the laws of combination (series) of resistances using a metre bridge.",
-			'./series_meter_bridge.py')
-		self.experiments[4] = ("To verify the laws of combination (parallel) of resistances using a metre bridge.",
-			'./paralle_meter_bridge.py')
+		 " by plotting a graph for potential difference versus current.")
+		self.experiments[2] = (("To find resistance of a given wire / standard resistor using metre bridge."))
+		self.experiments[3] =("To verify the laws of combination (series) of resistances using a metre bridge.")
+		self.experiments[4] = ("To verify the laws of combination (parallel) of resistances using a metre bridge.")
 		self.experiments[5] = ('To determine resistance of a galvanometer by half-deflection method and to find its'+
-			'figure of merit','./galvanometer_half_deflection.py')
+			'figure of merit')
 
 
 	def showOptions(self):
