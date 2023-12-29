@@ -1,7 +1,8 @@
 # CBSE-Physics-Practial-Table-Generator
 It generates tabular values for CBSE XII Physics Practical
 
-
+## Link
+# [Download Program](https://github.com/WolfSekhar/CBSE-Physics-Practial-Table-Generator/releases/download/executable/PhysicsPracticalTable_by_P.Sekhar.exe)
 
 ## How to run
 1. Python
