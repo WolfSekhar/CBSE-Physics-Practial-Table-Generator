@@ -76,6 +76,7 @@ class Main():
 		self.console.print("[b] By : [b blue]P.SEKHAR [white]([#87d700 b]PGT PHYSICS[white])",justify = "center")
 		self.console.print("[b]contact : [b #5f87d7] sekhar.root@gmail.com",justify = "center")
 		self.console.print("[b] url : [b #00ff00]https://github.com/WolfSekhar",justify = "center")
+		self.console.print("Version : 1.0.0",justify= "center")
 
 
 
