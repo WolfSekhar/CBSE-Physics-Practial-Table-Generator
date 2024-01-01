@@ -5,6 +5,7 @@ import xii.resistance_of_wire as ResistanceOfWire
 import xii.resistivity_vi as ResistivityOfWire
 import xii.galvanometer_half_deflection as GHalfDeflection
 import xii.galvanometer_to_voltmeter as GTV
+import xii.concave_mirror_focal_length as CMF
 import art as art
 
 class Main():
@@ -24,6 +25,7 @@ class Main():
 			'figure of merit')
 		self.experiments[6] = ("To convert the given galvanometer (of known resistance and figure of merit) into a " +
 			"voltmeter of desired range and to verify.")
+		self.experiments[7] = ("To find the value of v for different values of u in case of a concave mirror and to find the focal length.")
 
 
 	def showOptions(self):
@@ -54,6 +56,8 @@ class Main():
 			GHalfDeflection.GalvanometerHalfDeflection().run()
 		elif experiment_number == 6:
 			GTV.GalvanometerToVoltmeter().run()
+		elif experiment_number == 7:
+			CMF.ConcaveMirror().run()
 		else:
 			exit()
 
