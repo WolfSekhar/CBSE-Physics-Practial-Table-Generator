@@ -4,4 +4,5 @@ python -m venv venv
 pip install rich
 pip install pyinstaller
 pip install art
+pip install matplotlib
 deactivate
