@@ -20,10 +20,10 @@ class GalvanometerToVoltmeter:
 
 	def run(self):
 		resistanceOriginal = 200
-		resistanceOriginalModified = 200 + (random.randrange(1,3)/10)
+		resistanceOriginalModified = 200 + (random.randrange(-2,2))
 		rangeOfConversionV = 1
 		n = 100
-		k = random.randrange(40,70)/ 1000000
+		k = random.randrange(40,50)/ 1000000
 		ig = n * k
 		G = (rangeOfConversionV / ig) - resistanceOriginalModified
 
@@ -63,12 +63,13 @@ class GalvanometerToVoltmeter:
 			if G < 1:
 				mul = -1
 
+			newR = (rangeOfConversionV / ig) - (G * mul)
 			self.console.print("Resistance Of Galvanometer", round(G,2) * mul," Ohm")
 			self.console.print("Figure of merit: : ",k, " Div/A")
 			self.console.print("No of Div in Galvanometer : ", n )
 			self.console.print("Current of Galvanometer : ", round(ig,5) , " A")
 			self.console.print("V : Range of Conversion : ", rangeOfConversionV, " V")
-			self.console.print("R : ", resistanceOriginalModified, " Ohm")
+			self.console.print("R : ",newR, " Ohm")
 
 		generateV1()
 		calculateDeflection()
