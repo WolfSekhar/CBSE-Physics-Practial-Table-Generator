@@ -43,7 +43,7 @@ class ConcaveMirror:
 		self.calculateOnebyV()
 		self.showTabulation()
 
-		self.console.print("Mean Focal length from table : " , sum(self.f)/self.number_of_exp)
+		self.console.print("Mean Focal length from table : " , str(round(sum(self.f)/self.number_of_exp,3)) + ' cm')
 		self.plotUV()
 
 
@@ -93,5 +93,10 @@ class ConcaveMirror:
 
 	def plotUV(self):
 		mPlot.plot(self.u,self.v)
+		mPlot.grid(visible = True,animated = True)
+
+		#mPlot.plot(self.oneByU,self.oneByV)
 		mPlot.show()
 
+c = ConcaveMirror()
+c.run()
