@@ -27,7 +27,7 @@ class GalvanometerToVoltmeter:
 		ig = n * k
 		G = (rangeOfConversionV / ig) - resistanceOriginalModified
 
-		standardVolt = 1.5
+		standardVolt = random.randrange(15,26)/10
 
 		v2 = [standardVolt] * self.number_of_experiment
 		v1 = [standardVolt]
@@ -36,7 +36,7 @@ class GalvanometerToVoltmeter:
 		vDifference = []
 
 		def generateV1():
-			step = random.randrange(1,20)/100
+			step = random.randrange(1,4)/10
 			for i in range(0,self.number_of_experiment-1):
 				v1.append(v1[i] - step)
 
