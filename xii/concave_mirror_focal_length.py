@@ -97,6 +97,3 @@ class ConcaveMirror:
 
 		#mPlot.plot(self.oneByU,self.oneByV)
 		mPlot.show()
-
-c = ConcaveMirror()
-c.run()
