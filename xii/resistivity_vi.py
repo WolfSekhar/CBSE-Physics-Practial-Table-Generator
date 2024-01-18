@@ -1,6 +1,7 @@
 from rich.console import Console
 from rich.table import Table
 import random as random
+import matplotlib.pyplot as plt
 
 
 class ResistivityOfWires:
@@ -71,7 +72,7 @@ class ResistivityOfWires:
 			step = stepValue(0.1) # use step = stepValue(0.1) to get authentic error
 			resistance = (resistanceOne + step)
 			resistanceValues.append(round(resistance,2))
-			volatageValues.append(round(i * resistance,table2))
+			volatageValues.append(round(i * resistance,2))
 
 		for i in currentValues:
 			#step  = stepValue(0.1)
@@ -99,6 +100,11 @@ class ResistivityOfWires:
 		console.print('Mean Resistance of first wire : ',first_wire_resistance, 'Ohms')
 		console.print('Mean Resistance of second wire : ',second_wire_resistance, 'Ohms')
 
+
+		def graph():
+			plt.plot(currentValues[0:5],volatageValues[0:5])
+			plt.plot(currentValues[5:10],volatageValues[5:10])
+			plt.show()
 
 		# diameter
 
@@ -139,3 +145,5 @@ class ResistivityOfWires:
 
 		console.print('Resistivity of first wire : ', str(resistivity(first_wire_resistance,meanDiameterOfFirstWire,lengthOfFirstWire)))
 		console.print('Resistivity of second wire : ', str(resistivity(second_wire_resistance,meanDiameterOfSecondWire,lengthOfSecondWire)))
+
+		graph()
