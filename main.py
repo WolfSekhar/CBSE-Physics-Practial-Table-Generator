@@ -1,11 +1,8 @@
 from rich.console import Console
-import xii.series_meter_bridge as Series
-import xii.parallel_meter_bridge as Parallel
-import xii.resistance_of_wire as ResistanceOfWire
-import xii.resistivity_vi as ResistivityOfWire
-import xii.galvanometer_half_deflection as GHalfDeflection
-import xii.galvanometer_to_voltmeter as GTV
-import xii.concave_mirror_focal_length as CMF
+
+
+
+
 import art as art
 
 
@@ -46,18 +43,25 @@ class Main():
 
     def showTabulation(self, experiment_number):
         if experiment_number == 3:
+            import xii.series_meter_bridge as Series
             Series.Series().run()
         elif experiment_number == 4:
+            import xii.parallel_meter_bridge as Parallel
             Parallel.Parallel().run()
         elif experiment_number == 2:
+            import xii.resistance_of_wire as ResistanceOfWire
             ResistanceOfWire.ResistanceOfWire().run()
         elif experiment_number == 1:
+            import xii.resistivity_vi as ResistivityOfWire
             ResistivityOfWire.ResistivityOfWires().run()
         elif experiment_number == 5:
+            import xii.galvanometer_half_deflection as GHalfDeflection
             GHalfDeflection.GalvanometerHalfDeflection().run()
         elif experiment_number == 6:
+            import xii.galvanometer_to_voltmeter as GTV
             GTV.GalvanometerToVoltmeter().run()
         elif experiment_number == 7:
+            import xii.concave_mirror_focal_length as CMF
             CMF.ConcaveMirror().run()
         else:
             exit()
